@@ -1,2 +1,6 @@
 * Link to main 23500 page:
 - [[https://tligorio.github.io/CSCI235_Spring2019][Main 235 page]]
+
+* Resources
+- Prof Stewart Weiss' 235 page:
+  [[http://www.cs.hunter.cuny.edu/~sweiss/course_materials/csci235/csci235_f17.php%0A]]
