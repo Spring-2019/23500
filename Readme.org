@@ -3,4 +3,4 @@
 
 * Resources
 - Prof Stewart Weiss' 235 page:
-  [[http://www.cs.hunter.cuny.edu/~sweiss/course_materials/csci235/csci235_f17.php%0A]]
+http://www.cs.hunter.cuny.edu/~sweiss/course_materials/csci235/csci235_f17.php
