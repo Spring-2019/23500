@@ -15,3 +15,17 @@ public:
   Node* getNext();
 };
 
+Node::Node() : next(nullptr)
+{
+}
+
+Node::Node(std::string item){
+  this->item = item;
+  this->next = nullptr;
+}
+
+Node::Node(std::string item, Node *next){
+  this->item = item;
+  this->next = next;
+  
+}
