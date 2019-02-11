@@ -20,5 +20,23 @@ int main()
   std::cout << n->getNext()->getData() << "\n";
   std::cout << n->getNext()->getNext()->getData() << "\n";
 
+  // insert a new node between second and third
+
+  Node *n3 = new Node("four",n2);
+  n->getNext()->setNext(n3);
+  
+  // delete the second node
+
+  //n->setNext(n3);
+  n2 = n->getNext();
+  n->setNext(n->getNext()->getNext());
+  delete n2;
+
+  n2 = new Node("new 1",n);
+  n = n2;
+  n2 = new Node("new 2",n);
+  n = n2;
+  n2 = new Node("new 3",n);
+  n = n2;
   return 0;
 }
