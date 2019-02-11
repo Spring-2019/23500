@@ -1,31 +1,31 @@
 #include <iostream>
-#include <string>
-
-class Node{
-private:
-  std::string item;
-  Node *next;
-public:
-  Node();
-  Node(std::string item);
-  Node(std::string item, Node* next);
-  void setItem(std::string item);
-  void setNext(Node *next);
-  std::string getItem();
-  Node* getNext();
-};
-
+#include "Node.h"
 Node::Node() : next(nullptr)
 {
 }
 
-Node::Node(std::string item){
-  this->item = item;
+Node::Node(std::string data){
+  this->data = data;
   this->next = nullptr;
 }
 
-Node::Node(std::string item, Node *next){
-  this->item = item;
+Node::Node(std::string data, Node *next){
+  this->data = data;
   this->next = next;
-  
+}
+
+void Node::setData(std::string data){
+  this->data = data;
+}
+
+void Node::setNext(Node *next){
+  this->next = next;
+}
+
+std::string Node::getData(){
+  return data;
+}
+
+Node* Node::getNext(){
+  return next;
 }
