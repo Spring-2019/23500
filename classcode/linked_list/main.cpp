@@ -38,5 +38,20 @@ int main()
   n = n2;
   n2 = new Node("new 3",n);
   n = n2;
+  Node *head = n;
+  
+  while (n->getNext()!=nullptr){
+    std::cout << n->getData() << " ";
+    n=n->getNext();
+  }
+  std::cout << "\n";
+
+  n->setNext(head);
+  while (n->getNext()!=nullptr){
+    std::cout << n->getData() << " ";
+    n=n->getNext();
+  }
+  std::cout << "\n";
+  
   return 0;
 }
