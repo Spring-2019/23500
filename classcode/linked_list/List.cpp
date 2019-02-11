@@ -11,16 +11,16 @@ List::~List(){
   std::cout << "In the destructor\n";
   if (head != nullptr){
     Node *t,*t2;
-    
-    t=head->getNext();
+
+    t=head;
     while (t!=nullptr){
-      t2=t;
-      t=t->getNext();
-      delete t2;
+	t2=t;
+	t=t->getNext();
+	delete t2;
     }
   }
-  
-  
+
+
 }
 
 void List::insert(std::string data){
