@@ -18,6 +18,7 @@ List::~List(){
       t=t->getNext();
       delete t2;
     }
+    delete head;
   }
   
   
