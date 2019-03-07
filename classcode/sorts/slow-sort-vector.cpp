@@ -1,16 +1,18 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 
-void print(int a[], int size){
+void print(std::vector<int> a){
+  int size = a.size();
   for (int i = 0; i < size; ++i) {
     std::cout << a[i] << ", ";
-    }
+  }
   std::cout << "\n\n";
 }
 
 
-int find_min(int a[], int start_index, int stop_index){
+int find_min(std::vector<int> a, int start_index, int stop_index){
   int min_index = start_index;
   int i;
   for (i = start_index; i < stop_index; ++i) {
@@ -21,7 +23,8 @@ int find_min(int a[], int start_index, int stop_index){
   return min_index;
 }
 
-void ssort(int a[], int size){
+void  ssort(std::vector<int> &a){
+  int size = a.size();
   int min_index;
   int i,tmp;
   for (i = 0; i < size-1; ++i) {
@@ -30,23 +33,24 @@ void ssort(int a[], int size){
     a[i] = a[min_index];
     a[min_index]=tmp;
   }
- }
+  
+}
+
 
 int main()
 {
   int i;
   srand(time(NULL));
   
-  int s = 10;
-  int *a = new int[s];
+  std::vector<int> a(10);
   
   
-  for (i=0;i<s;i++)
+  for (i=0;i<a.size();i++)
     a[i] = rand()%1000;
 
-  print(a,s);
-  ssort(a,s);
-  print(a,s);
+  print(a);
+  ssort(a);
+  print(a);
   
   return 0;
 }
