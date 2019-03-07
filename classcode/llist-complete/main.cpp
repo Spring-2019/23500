@@ -21,6 +21,9 @@ int main()
   std::cout << l->getDebugString();
   (*l)[2]="ZOWIE";
   std::cout << l->getDebugString();
+
+
+
   List l2;
   l2.insert("a");
   l2.insert("b");
