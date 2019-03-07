@@ -6,13 +6,31 @@ void print(int a[], int size){
   for (int i = 0; i < size; ++i) {
     std::cout << a[i] << ", ";
     }
-  std::cout << "\n";
+  std::cout << "\n\n";
+}
+
+
+int find_min(int a[], int start_index, int stop_index){
+  int min_index = start_index;
+  int i;
+  for (i = start_index; i < stop_index; ++i) {
+    if (a[i] < a[min_index]){
+      min_index = i;
+    }
+  }
+  return min_index;
 }
 
 void ssort(int a[], int size){
-
-  // sort the list
-}
+  int min_index;
+  int i,tmp;
+  for (i = 0; i < size-1; ++i) {
+    min_index = find_min(a,i,size);
+    tmp = a[i];
+    a[i] = a[min_index];
+    a[min_index]=tmp;
+  }
+ }
 
 int main()
 {
@@ -27,10 +45,8 @@ int main()
     a[i] = rand()%1000;
 
   print(a,s);
-  // sort it
-
-  // print it again
-  
+  ssort(a,s);
+  print(a,s);
   
   return 0;
 }
