@@ -100,9 +100,11 @@ std::vector<int> msort(std::vector<int> list){
 }
 
 
+
 extern char *optarg;
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
+
   bool print = false;
   int  c;
   int size = 10;
@@ -113,6 +115,7 @@ int main(int argc, char **argv)
     switch (c){
     case 'h':
       print_help(argv);
+      exit(0);
       break;
     case 'p' :
       print = true;
