@@ -100,11 +100,45 @@ std::vector<int> msort(std::vector<int> list){
 }
 
 
+std::vector<int> qsort(std::vector<int> list){
+  int i;
+  if (list.size() <=1){
+    return list;
+  }
+
+  std::vector<int> a,b;
+  int pivot = list[0];
+  
+  for (i=1;i<list.size();i++){
+    if (list[i]<=pivot)
+      a.push_back(list[i]);
+    else
+      b.push_back(list[i]);
+  }
+
+  a = qsort(a);
+  b = qsort(b);
+
+  for (i=0;i<a.size();i++){
+    list[i]=a[i];
+  }
+  list[i]=pivot;
+  i++;
+  for (int j = 0; j < b.size();j++){
+    list[i] = b[j];
+    i++;
+  }
+  
+
+  return list;
+  
+  
+}
+
 
 extern char *optarg;
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-
   bool print = false;
   int  c;
   int size = 10;
@@ -115,7 +149,6 @@ int main(int argc, char *argv[])
     switch (c){
     case 'h':
       print_help(argv);
-      exit(0);
       break;
     case 'p' :
       print = true;
@@ -151,7 +184,8 @@ int main(int argc, char *argv[])
     a= ssort(a);
   else if(algorithm == 'm')
     a = msort(a);
-  
+  else if(algorithm == 'q')
+    a = qsort(a);
 
   gettimeofday(&tp,NULL);
   long current_time = tp.tv_sec * 1000 + tp.tv_usec / 1000;
