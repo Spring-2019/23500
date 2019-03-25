@@ -1,0 +1,32 @@
+* Please fill out this section:
+** Name: 
+** GitHub username:
+
+* Lab ##
+
+* File structure:
+- README.org - this file. fill out the top and use it for notes
+- Makefile
+- main.cpp - main driver
+- funcs.h / funcs.cpp -- add your functions here.
+- test.cpp - add your tests
+- doctest.h - testing library
+
+The full text of the 136 version of the lab can be found here:
+
+https://maryash.github.io/135/labs/lab_06.html
+
+
+* Overall notes:
+- Write your functions in funcs.cpp
+- Write your tests in test.cpp
+- I will test your program by running ~make test~ then ~./test~
+- Don't add .o, executable or any extraneous files to the repo
+- You should commit and push your work frequently
+- make sure to add sufficient tests to show that everything works
+ 
+* Specifc changes to the lab
+
+* Main lab
+
+Link: https://maryash.github.io/135/labs/lab_06.html
