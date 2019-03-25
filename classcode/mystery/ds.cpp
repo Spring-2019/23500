@@ -3,7 +3,7 @@
 
 void ds::f1(int c){
   a[b]=c;
-  c++;
+  b++;
 }
 
 int ds::f2(){
