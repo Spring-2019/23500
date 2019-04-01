@@ -3,7 +3,7 @@
 #include <string>
 #include <unistd.h>
 #include <stack>
-
+#include <queue>
 std::string maze[30];
 char me='Z';
 char visited='.';
@@ -31,13 +31,15 @@ struct loc {
 };
 
 void solve(std::string maze[30], int row, int col){
-  std::stack<struct loc> s;
+  //std::stack<struct loc> s;
+  std::queue<struct loc> s;
   int r,c;
   struct loc l = {row,col};
   s.push(l);
 
   while (!s.empty()){
-    l = s.top();
+    // l = s.top();
+    l = s.front();
     s.pop();
     r = l.r;
     c = l.c;
@@ -47,19 +49,23 @@ void solve(std::string maze[30], int row, int col){
     }
 
     maze[r][c]='z';
-    usleep(20000);
+    usleep(40000);
     print_maze(maze);
 
     if (maze[r+1][c]=='#' || maze[r+1][c]=='$') {
+      maze[r+1][c] = '.';
       s.push({r:r+1,c:c});
     }
     if (maze[r-1][c]=='#'||  maze[r-1][c]=='$') {
+      maze[r-1][c] = '.';
       s.push({r:r-1,c:c});
     }
     if (maze[r][c+1]=='#' || maze[r][c+1]=='$') {
+      maze[r][c+1] = '.';
       s.push({r:r,c:c+1});
     }
     if (maze[r][c-1]=='#' ||  maze[r][c-1]=='$') {
+      maze[r][c-1] = '.';
       s.push({r:r,c:c-1});
     }
     
