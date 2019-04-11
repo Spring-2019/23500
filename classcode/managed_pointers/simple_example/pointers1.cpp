@@ -22,8 +22,11 @@ public:
 };
 
 void f(){
-  std::shared_ptr<pt> p(new pt(100,200));
+  //  std::shared_ptr<pt> p(new pt(100,200));
+  auto p = std::make_shared<pt>(50,22);
   std::cout << p->toString() << "\n";
+  auto p2 = std::make_shared<pt>();
+  std::cout << p2->toString() << "\n";
   
 }
 
