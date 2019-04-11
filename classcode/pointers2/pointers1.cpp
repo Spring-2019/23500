@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <memory> 
 class pt{
 
 private:
@@ -13,16 +13,27 @@ public:
     this->x = x;
     this->y = y;
   }
+  ~pt(){
+    std::cout << "In the pt destructor\n";
+  }
   std::string toString(){
     return "<"+std::to_string(x)+","+std::to_string(y)+">";
   }
 };
 
+void f(){
+  std::shared_ptr<pt> p(new pt(100,200));
+  std::cout << p->toString() << "\n";
+  
+}
 
 int main()
 {
-  pt *p = new pt(5,2);
+  std::cout << "Before calling f\n";
+  f();
+  std::cout << "After returning from f\n";
 
-  std::cout << p->toString() << "\n";
+
+
   return 0;
 }
