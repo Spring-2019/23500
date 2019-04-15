@@ -5,19 +5,19 @@ Node::Node() : left(nullptr),right(nullptr)
 }
 
 
-Node::Node(std::string data){
+Node::Node(int data){
   this->data = data;
   this->left = nullptr;
   this->right = nullptr;
 }
 
-Node::Node(std::string data, Node *left, Node *right){
+Node::Node(int data, Node *left, Node *right){
   this->data = data;
   this->left = left;
   this->right = right;
 }
 
-void Node::setData(std::string data){
+void Node::setData(int data){
   this->data = data;
 }
 
@@ -29,7 +29,7 @@ void Node::setRight(Node *right){
   this->right = right;
 }
 
-std::string Node::getData(){
+int Node::getData(){
   return data;
 }
 

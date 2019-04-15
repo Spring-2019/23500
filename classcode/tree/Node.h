@@ -2,17 +2,17 @@
 
 class Node{
  private:
-  std::string data;
+  int data;
   Node *left,*right;
 public:
   Node();
-  Node(std::string data);
-  Node(std::string data, Node* left,Node * right);
-  void setData(std::string data);
+  Node(int data);
+  Node(int data, Node* left,Node * right);
+  void setData(int data);
   
   void setLeft(Node *left);
   void setRight(Node *right);
-  std::string getData();
+  int getData();
   Node* getLeft();
   Node* getRight();
 };
