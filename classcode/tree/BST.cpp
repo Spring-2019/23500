@@ -13,6 +13,12 @@ BST::~BST(){
 }
 
 void BST::insert(int data){
+  Node *newNode = new Node(data);
+
+  if (root==nullptr){
+    root = newNode;
+  }
+  
 }
 
 std::string BST::getDebugString(){
