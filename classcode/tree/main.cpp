@@ -1,9 +1,19 @@
 #include <iostream>
-#include "Node.h"
+#include "BST.h"
 
 int main()
 {
-  Node *n= new Node(10);
+
+  BST *t = new BST();
+  t->insert(50);
+  t->insert(30);
+  t->insert(35);
+  t->insert(75);
+  t->insert(80);
+  
+  
+  /*
+    Node *n= new Node(10);
   Node *t;
   n->setLeft(new Node(20));
   n->setRight(new Node(30));
@@ -13,5 +23,6 @@ int main()
   t->setRight(new Node(50));
   
   std::cout<< n->getRight()->getData() << "\n";
+  */
   return 0;
 }
