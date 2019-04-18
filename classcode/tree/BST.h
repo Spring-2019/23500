@@ -10,6 +10,7 @@ public:
   BST();
   ~BST();
   void insert(int data);
+  int search(int data);
   std::string getDebugString();
 };
 

@@ -34,6 +34,25 @@ void BST::insert(int data){
   return;
 }
 
+int BST::search(int data){
+  Node *tmp = root;
+  while (tmp != nullptr){
+    if (tmp->getData() == data)
+      return data;
+    else if (tmp->getData() > data)
+      tmp = tmp->getLeft();
+    else
+      tmp = tmp->getRight();
+  }
+
+  // if we got here then the data isn't in the tree
+  // but in a real program our tree would store
+  // a class where we're searching on something like
+  // an id number so we could return null if not found
+  throw 1;
+
+  
+}
 std::string BST::getDebugString(){
   std::string s = "";
   return s;
