@@ -53,6 +53,44 @@ int BST::search(int data){
 
   
 }
+
+void BST::delete(int data){
+
+  // find the node in question first
+  // if it's not there, can't delete it
+
+
+  // need to get a pointer to the parent
+  // of the node we want to delete
+
+  // there are 3 cases for deletion
+
+  // 1 - the node we want to delete is a leaf
+  //   - just set the parent's left/right pointer to null
+
+  // 2 - the node we want to delete has one child
+  //   - repoint the parent of the node to the children
+  //   - of the node
+
+  // if you think about it, cases 1 and 2 are
+  // really the same - assign the parent of the node
+  //  to point to one of the children of the node
+  // and don't forget to delete the node
+
+  // 3 - the node we want to delete has 2 children
+  //   - replace the node we want to delete
+  //   - with the largest from its left subtree
+  //   - or the smallest from its right subtree
+  //   -
+  //   - we can find the largest on left by first
+  //   - going to node->getLeft() and then
+  //   - going as far right as we can
+  //
+  //   - don't forget to remove the largest from left
+  //   - (or smallest from right) which will be
+  //   - a case 1 or case 2 deletion
+}
+
 std::string BST::getDebugString(){
   std::string s = "";
   return s;

@@ -11,6 +11,7 @@ public:
   ~BST();
   void insert(int data);
   int search(int data);
+  void delete(int data);
   std::string getDebugString();
 };
 
